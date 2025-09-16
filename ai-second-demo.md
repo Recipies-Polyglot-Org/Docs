@@ -501,3 +501,31 @@ experience and strong problem-solving skills."
 ---
 
 This system provides recruiters with intelligent, evidence-based candidate recommendations that go far beyond traditional keyword matching, ensuring better hiring decisions through semantic understanding and transparent reasoning.
+
+
+
+
+
+
+## Why LangChain is not used
+1. The Current Implementation is Already Sophisticated
+there are custom features that LangChain doesn't provide:
+
+* Advanced skill extraction with evidence: Your regex patterns + AI analysis
+* Custom similarity scoring: Cosine similarity with confidence levels (HIGH/MEDIUM/LOW)
+* GitHub integration: Specialized for developer profiles
+* Caching system: Performance optimizations
+* Background job processing: For GitHub data collection
+
+2. Performance Considerations
+Current Direct Approach:
+
+* Direct AWS SDK calls are faster
+* No abstraction layer overhead
+* You control caching, retries, timeouts
+
+3. LangChain Approach:
+
+* Additional abstraction layer
+* May be slower for high-volume requests
+* Less control over performance optimizations
